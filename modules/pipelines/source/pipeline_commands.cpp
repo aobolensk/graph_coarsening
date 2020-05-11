@@ -165,8 +165,7 @@ void PipelineParser::Pipeline::perform_commands() {
                                 << std::endl;
                         }
                     } else if (subtype == "_no_parameter") {
-                        throw std::runtime_error("Missing subtype for " +
-                                                 subtype);
+                        throw std::runtime_error("Missing subtype for " + type);
                     } else {
                         throw std::runtime_error("Unknown subtype: " + subtype);
                     }
@@ -232,10 +231,9 @@ void PipelineParser::Pipeline::perform_commands() {
                                 << std::endl;
                         }
                     } else if (subtype == "_no_parameter") {
-                        throw std::runtime_error("Missing subtype for " +
-                                                 subtype);
+                        throw std::runtime_error("Missing subtype for " + type);
                     } else {
-                        throw std::runtime_error("Unknown subtype: " + type);
+                        throw std::runtime_error("Unknown subtype: " + subtype);
                     }
                 } else if (type == "lam") {
                     for (int i = 0; check(); --count, ++i) {
